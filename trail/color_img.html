@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head></head>
+<style type="text/css">
+    .item_photo{
+        height: 300px;
+        width: 400px;
+        margin: 10px;
+        font-size: 3.5em;
+        color: #A0A0A0;
+        text-align-last: right;
+        padding: 0.3em;
+        font-family: Microsoft JhengHei,Arial, Helvetica, sans-serif;
+    }
+</style>
+<script lang="javascript">
+    function def_color () {
+        var color_type= ["#FFFFF5","#F5FFF5","#E6FAFF","#F0FAE6","#EBE6FA","#EBF0FF","#FFF0EB","#FFF0FA"]
+        var item_photo=document.getElementsByClassName('item_photo');
+        var item_photo_leng=document.getElementsByClassName('item_photo').length;
+
+        for(i=0;i<item_photo_leng;i++)
+        {
+            var index =parseInt(Math.random()*(color_type.length));
+            item_photo[i].style.backgroundColor=color_type[index];
+            item_photo[i].innerHTML=color_type[index];
+        }
+
+    }
+
+</script>
+<body onload="def_color ()">
+    <div class="item_photo"></div>
+    <div class="item_photo"></div>
+    <div class="item_photo"></div>
+    <div class="item_photo" ></div>
+    <div class="item_photo"></div>
+    <div class="item_photo"></div>
+    <div class="item_photo" ></div>
+    <div class="item_photo"></div>
+    <div class="item_photo"></div>
+</body>
+
+
+</html

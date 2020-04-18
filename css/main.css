@@ -1,0 +1,11 @@
+#sty_list_headline{
+    background-color:darkgrey;
+    font-size: 14px;
+    color: cadetblue;
+
+}
+#sty_list_content{
+    background-color: cornsilk;
+    font-size: 16px;
+    color: #000;
+}
