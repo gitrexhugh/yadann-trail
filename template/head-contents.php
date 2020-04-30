@@ -6,8 +6,7 @@
 <?php } ?>
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<!-- 取得a_config定義的CSS路徑  -->
-<link rel="stylesheet" type="text/css" href="<?php echo $css_root?>main.css";?>> 
+<link rel="stylesheet" type="text/css" href="/css/main.css">
 
 <style>
 	#main-content {

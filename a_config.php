@@ -25,7 +25,4 @@
         die ('DB連線失敗'. mysqli_error($link));
     }
     //echo 'DB連線成功';
-    $css_root="/css/";
-    $editor_root='/simditor/';
-
 ?>

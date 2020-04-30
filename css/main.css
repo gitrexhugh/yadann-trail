@@ -1,3 +1,27 @@
+/* 移除預設CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* 網頁CSS 定義*/
+
 #sty_list_headline{
     background-color:darkgrey;
     font-size: 14px;
@@ -9,3 +33,236 @@
     font-size: 16px;
     color: #000;
 }
+#editor{
+    display: block;
+    width: 60%;
+    height: 300px;
+}
+#header{
+    margin: 0px auto;
+    height: 145px;
+    width: 70%;   
+}
+#main-content{
+    margin: 0px auto;
+    height: auto;
+    width: 70%;
+    
+}
+#logo{
+    margin: 5px;
+    width: 350px;
+}
+menu{
+    text-align: right;
+    font-family: 'Microsoft JhengHei','Arial','Bahnschrift';
+    font-size: 14pt;
+    line-height: 35px;
+    margin: 0px;
+    border: #969696;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+menu li{
+    display: inline;
+    margin-right: 8%;
+}
+menu li a{
+    color: #505050;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+menu li a:hover{
+    color: #006BAC;
+    text-decoration: none;
+}
+.breadcrumb, .breadcrumb ol{
+    background-color: #006BAC;
+    font-family: 'Microsoft JhengHei','Arial','Bahnschrift';
+    line-height: 35px;
+    margin: 0px;
+    padding-left: 10px;
+}
+.breadcrumb li em{
+    font-style: normal;
+}
+.breadcrumb li{
+    display: inline;
+    margin-right: 5px;
+}
+.breadcrumb li a{
+    color: white;
+    text-decoration: none;
+}
+.cd-breadcrumb li::after, .cd-multi-steps li::after {
+    font-size: 14pt;
+    content: ' \00bb';
+    color: whitesmoke;
+ 
+  }
+ .cd-breadcrumb li.current, .cd-breadcrumb li.current::after{
+    color: #77CAE6;
+    content:'';
+    font-style: normal;
+}
+#banner{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.footer {
+    font-size: 14px;
+    text-align: center;
+}
+.submenu{
+    display: inline-block;
+    width: inherit;
+    max-width: 25%;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Microsoft JhengHei','Arial','Bahnschrift';
+    border-color: #DCDCDC;
+    border-left-style: solid;
+    border-left-width: 3px;
+    vertical-align: top;
+
+}
+.submenu ul{
+    list-style: none;
+    font-size: 12pt;
+}
+.submenu li a{
+    line-height: 50px;
+    color: #828282;
+    text-decoration: none;
+    padding-left: 30px;
+}
+#nav-title{
+    color: #006BAC;
+    font-size: 14pt;
+    padding-left: 15px;
+}
+.submenu li.current{
+    color: #77CAE6;
+    font-style: normal;
+    padding-left: 30px;
+    background: url('/images/sub-menu-ind.png') no-repeat 0 0;
+}
+
+#product{
+    display: inline-block;
+    width: 73%;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-family: 'Microsoft JhengHei','Arial','Bahnschrift';
+}
+#product_content{
+    font-size: 18pt;
+    color: #006BAC;
+}
+#product_title{
+    font-size: 20pt;
+    font-weight: 500;
+    color: #006BAC;
+    margin-top: 5px;
+}
+#product_content{
+    font-size: 14pt;
+    color: #828282;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#product_imgs{
+    margin: 1%;
+    max-height: none;
+}
+#product_imgs img{
+    width: 100%;
+}
+footer{
+    width: 100%;
+    height: 170px;
+    background-color: #5A5A5A;
+    font-family: 'Microsoft JhengHei','Arial','Bahnschrift';
+    font-size: 12pt;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+footer address{
+    margin-top: 30px;
+    align-content: center;
+}
+address p{
+    line-height: 30px;
+}
+footer li{
+    display: inline;
+    margin: 20px;
+    font-weight: 400;
+}
+
+footer li a{
+    color: white;
+}
+
+footer li a:hover{
+    color: #77CAE6;
+}
+#about{
+    display: inline-block;
+    width: 73%;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-family: 'Microsoft JhengHei','Arial','Bahnschrift';
+}
+#about_title{
+    font-size: 20pt;
+    font-weight: 500;
+    color: #006BAC;
+    margin-top: 5px;
+}
+#about_content{
+    font-size: 14pt;
+    color: #828282;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#about_img{
+    margin: 1%;
+    max-height: none;
+}
+#about_img img{
+    width: 100%;
+}
+ul.contact{
+    padding-left: 20px;
+}
+
+li.tel{
+    background: url('/images/icon_phone-01.png') no-repeat 0;
+    vertical-align: bottom;
+    
+}
+li.email{
+    background: url('/images/icon_mail-01.png') no-repeat 0;
+    list-style-position: inside;
+}
+li.address{
+    background: url('/images/icon_address-01.png') no-repeat  0;
+    list-style-position: inside;
+}
+
+/* 以圖片替換麵包屑中的分隔符號範例
+.cd-breadcrumb.custom-separator li::after, 
+.cd-multi-steps.custom-separator li::after {
+   replace the default separator with a custom icon 
+  content: '';
+   /*height: 16px;
+  width: 16px;
+ background: url(../img/cd-custom-separator.svg) no-repeat center center;
+  vertical-align: middle;}*/
+
+ 
