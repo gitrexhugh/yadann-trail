@@ -2,7 +2,7 @@
 <!--根據Current_page參數，顯示active的功能，current_page參數在a_config網址來改變  -->
 <div id="header">
 	<div id="logo">
-        <img src="/images/logo.png"/>
+        <img src="./images/logo.png"/>
     </div>
     <menu>
             <li><a href="index.php">整合產品銷售</a></li>

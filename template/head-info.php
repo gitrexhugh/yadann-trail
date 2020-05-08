@@ -4,4 +4,4 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" /> 
 <?php } */?>
-<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="stylesheet" type="text/css" href="./css/main.css">
