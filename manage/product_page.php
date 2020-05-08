@@ -1,20 +1,18 @@
 
 <!DOCTYPE html>
 <html>
-<head>
     <script type="text/javascript">
-        function del_product(pid)
+        function del_product(pid)//確認刪除產品後，刪除產品
         {
             if (confirm("確認刪除產品?"))
-            location.href="del_user.php?user_id="+pid;
+            location.href="del_product.php?product_id="+pid;
         }
     </script>
 
-</head>
 <?php include("manage_header.php");?>
-<div id="main-content">
-<?php include("manage_menu.php");?>
-    <?php include("product_list.php"); ?>
+    <?php include("manage_menu.php");?>
+    <div id="main-content">
+        <?php include("product_list.php"); ?>
+    </div>
 
-</div>
 </html>

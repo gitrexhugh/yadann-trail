@@ -16,7 +16,7 @@ $user_password=$row['password'];
 $user_email=$row['email'];
 
 ?>
-
+<!--html編輯頁面 -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,15 +35,17 @@ $user_email=$row['email'];
     </script>
 </head>
 <?php include("manage_header.php");?>
-<div id="main-content">
 <?php include("manage_menu.php");?>
-    <form action="chkuser.php?action=edit&ed_u=<?php echo "$user_id"?>" method="post" name="userform">
-        帳號<input name="account" type="text" value=<?php echo "$user_account";?>>
-        密碼<input name="password" type="password" value=<?php echo "$user_password";?>>
-        email<input name="email" type="email" value=<?php echo "$user_email";?>>
+<div id="main-content">
+<section class="form_formate">
+    <title>編輯使用者</title>
+    <a href="user_page.php">返回</a>
+    <form id="edit_user_form" action="chkuser.php?action=edit&ed_u=<?php echo "$user_id"?>" method="post" name="userform">
+        <div class="edit_form_col">帳號<input name="account" type="text" value=<?php echo "$user_account";?>></div>
+        <div class="edit_form_col">密碼<input name="password" type="password" value=<?php echo "$user_password";?>></div>
+        <div class="edit_form_col">email<input name="email" type="email" value=<?php echo "$user_email";?>></div>        
     </form>
-    <input type="button" value="修改" onclick="check_data()">
-
-
+    <input class="form_submit" type="button" value="修改" onclick="check_data()">
+</section>
 </div>
 </html>

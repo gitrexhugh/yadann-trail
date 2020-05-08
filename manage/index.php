@@ -13,10 +13,13 @@
             loginform.submit();
         }
     </script>
+    <link rel="stylesheet" type="text/css" href="manage.css">
 </head>
+<div id="login">
     <form action="checkpwd.php" method="post" name="loginform">
-        帳號<input name="account" type="text">
-        密碼<input name="password" type="password">
+        帳號<input name="account" type="text" class="form_col"> </br>
+        密碼<input name="password" type="password" class="form_col">
     </form>
-    <input type="button" value="登入" onclick="check_data()">
+    <input class="submit" type="button" value="登入" onclick="check_data()">
+</div>
 </html>
