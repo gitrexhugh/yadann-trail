@@ -1,6 +1,6 @@
 <html>
     <div id="banner">
-        <img src="/images/banner-sample.jpg" />
+        <img src="images/banner-sample.jpg" />
     </div>
 </html>
 

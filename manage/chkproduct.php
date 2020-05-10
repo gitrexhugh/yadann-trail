@@ -18,10 +18,10 @@ $link=create_connection();
 if ($action=="edit")
 {
     //若是編輯則Update產品資料
-    $sql="UPDATE product SET product_name='$product_name', product_name='$product_img', product_content='$product_content', is_publish='$is_publish' WHERE product_id=$product_id";
+    $sql="UPDATE product SET product_name='$product_name', product_img='$product_img', product_content='$product_content', is_publish='$is_publish' WHERE product_id=$product_id";
     $result=execute_sql($link,"mydb",$sql);
     echo "<script type='text/javascript'>";
-    echo "alert('已儲存產品資料');";
+    echo "alert('已儲存產品資料-$is_publish');";
     echo "history.back();";
     echo "</script>";
     
@@ -31,7 +31,6 @@ if ($action=="edit")
     $sql="INSERT INTO product(product_name, product_name, product_content,is_publish) VALUES ('$product_name','$product_img','$product_content','$is_publish')";
     $result=execute_sql($link,"mydb",$sql);
     echo "<script type='text/javascript'>";
-    echo "alert('已新增產品');";
     echo "history.back();";
     echo "</script>";
 

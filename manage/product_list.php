@@ -30,7 +30,7 @@ if(!$result)//若$query無資料，則顯示資料庫讀取失敗
      while($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
     {
         $pid=$row['product_id'];
-        if(!$row['is_publish'])//將is_publish的bolean值轉為中文
+        if($row['is_publish'])//將is_publish的bolean值轉為中文
         {
             $publish="是";
         }else{

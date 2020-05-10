@@ -106,9 +106,10 @@ menu li a:hover{
     content:'';
     font-style: normal;
 }
-#banner{
+#banner img{
     margin-top: 0px;
     margin-bottom: 0px;
+    width: 100%;
 }
 
 .footer {
@@ -148,7 +149,7 @@ menu li a:hover{
     color: #77CAE6;
     font-style: normal;
     padding-left: 30px;
-    background: url('./images/sub-menu-ind.png') no-repeat 0 0;
+    background: url('images/sub-menu-ind.png') no-repeat 0 0;
 }
 
 #product{
@@ -242,16 +243,16 @@ ul.contact{
 }
 
 li.tel{
-    background: url('./images/icon_phone-01.png') no-repeat 0;
+    background: url('images/icon_phone-01.png') no-repeat 0;
     vertical-align: bottom;
     
 }
 li.email{
-    background: url('./images/icon_mail-01.png') no-repeat 0;
+    background: url('images/icon_mail-01.png') no-repeat 0;
     list-style-position: inside;
 }
 li.address{
-    background: url('./images/icon_address-01.png') no-repeat  0;
+    background: url('images/icon_address-01.png') no-repeat  0;
     list-style-position: inside;
 }
 

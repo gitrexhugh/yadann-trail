@@ -46,19 +46,22 @@ $is_publish=$row['is_publish'];
         <div class="edit_form_col">產品名稱<input name="product_name" type="text" value=<?php echo "$product_name";?>></div>
         <div class="edit_form_col">產品圖片<input name="product_img" type="text" value=<?php echo "$product_img";?>></div>
         <?php 
-            if(!$row['is_publish'])//檢查是否發布 is_publish的值來顯示radio button
+        echo "$is_publish";
+            if($is_publish)//檢查是否發布 is_publish的值來顯示radio button
                 {
                     $publish="是";
                     echo "<div class=\"edit_form_col\">是否發布".
-                         "<input type=\"radio\" name=\"publish\" vlaue=\"1\" checked=\"true\">是<input type=\"radio\" name=\"publish\" value=\"0\">否</div>";
+                        "<input type=\"radio\" name=\"publish\" value=\"1\" checked>是</input><input type=\"radio\" name=\"publish\" value=\"0\">否</input></div>";
                 }else{
                     $publish="否";
-                    "<input type=\"radio\" name=\"publish\" vlaue=\"0\" >是<input type=\"radio\" name=\"publish\" value=\"0\" checked=\"true\">否</div>";
+                    echo "<div class=\"edit_form_col\">是否發布".
+                        "<input type=\"radio\" name=\"publish\" value=\"1\" >是</input><input type=\"radio\" name=\"publish\" value=\"0\" checked>否</input></div>";
                 }
          ?>  
-        產品介紹<textarea id="editor1" name="product_content" type="textarea"><?php echo "$product_content";?></textarea>
+        <p>產品介紹</p>
+        <textarea id="editor1" id="product_content" type="textarea"><?php echo "$product_content";?></textarea>
+        <input class="form_submit" type="button" value="修改" onclick="check_data()"></input>
     </form>
-    <input class="form_submit" type="button" value="修改" onclick="check_data()">
 </section>
 </div>
 </html>

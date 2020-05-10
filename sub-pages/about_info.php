@@ -23,7 +23,7 @@ if(!$query)//若$query無資料，則顯示資料庫讀取失敗
 
 <section id="about">
     <h1 id="about_title"></h1>
-    <div id="about_img"><img src="/images/about_us_img.png"</div>
+    <div id="about_img"><img src="images/about_us_img.png" /></div>
     <article id="about_content">
     工業智能自動化一直是各產業的最終目標
 研發團隊整合國內外各大知名品牌
