@@ -5,8 +5,8 @@
         <img src="images/logo.png"/>
     </div>
     <menu>
-            <li><a href="index.php">整合產品銷售</a></li>
-            <li><a href="#">產品資訊</a></li>
+            <li><a href="#">整合產品銷售</a></li>
+            <li><a href="product.php">產品資訊</a></li>
             <li><a href="#">聯絡我們</a></li>
             <li><a href="about_us.php">關於曄電</a></li>
     </menu>
