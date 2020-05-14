@@ -42,11 +42,14 @@ $is_publish=$row['is_publish'];
 <section class="form_formate">
     <title>編輯產品</title>
     <a href="product_page.php">返回</a>
-    <form id="edit_product_form" action="chkproduct.php?action=edit&ed_p=<?php echo "$product_id"?>" method="post" name="productform">
+    <form id="edit_product_form" action="chkproduct.php?action=edit&ed_p=<?php echo "$product_id"?>" method="post" name="productform" enctype="multipart/form-data">
         <div class="edit_form_col">產品名稱<input name="product_name" type="text" value=<?php echo "$product_name";?>></div>
-        <div class="edit_form_col">產品圖片<input name="product_img" type="text" value=<?php echo "$product_img";?>></div>
+        <div class="edit_form_col">
+            <input type="hidden" name="MAX_FILE_SIZE" value="20048576">
+            <input type="file" name="product_img" value=<?php  echo "$product_img";?>><br>
+        </div>
         <?php 
-        echo "$is_publish";
+        //echo "$is_publish";
             if($is_publish)//檢查是否發布 is_publish的值來顯示radio button
                 {
                     $publish="是";
@@ -59,9 +62,25 @@ $is_publish=$row['is_publish'];
                 }
          ?>  
         <p>產品介紹</p>
-        <textarea id="editor1" id="product_content" type="textarea"><?php echo "$product_content";?></textarea>
+        <textarea id="editor1" name="product_content" type="textarea"><?php echo "$product_content";?></textarea>
         <input class="form_submit" type="button" value="修改" onclick="check_data()"></input>
     </form>
 </section>
 </div>
 </html>
+
+
+ <!--
+        <div class="edit_form_col">
+            <input type="hidden" name="MAX_FILE_SIZE" value="20048576">
+            <input type="file" name="product_img" value=<?php // echo "$product_img";?>><br>
+        </div>
+        <p>產品圖檔</p>
+        <div id="product_imges">
+        <?php //取得產品圖檔
+ //               $product_img_pagth="$product_img";
+ //               echo "$product_img";
+            ?>
+            <img scr="<?php //echo "$product_img";?>" />
+        </div>
+    -->

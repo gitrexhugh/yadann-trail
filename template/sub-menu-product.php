@@ -32,7 +32,6 @@
                 $product_name=$row['product_name'];
             echo "<li><a href='product.php?pid=$pid'>$product_name</a></li>";
             }
-            echo '</div>';
 
             //---------------
             mysqli_free_result($result);//釋放記憶體
