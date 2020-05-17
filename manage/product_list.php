@@ -30,6 +30,7 @@ if(!$result)//若$query無資料，則顯示資料庫讀取失敗
      while($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
     {
         $pid=$row['product_id'];
+        $pname=$row['product_name'];
         if($row['is_publish'])//將is_publish的bolean值轉為中文
         {
             $publish="是";
@@ -37,12 +38,14 @@ if(!$result)//若$query無資料，則顯示資料庫讀取失敗
             $publish="否";
         }
 
-       echo "<div class=\"form_List_col\"><div class=\"form_product_name\">{$row['product_name']}</div>".
+       echo "<div class=\"form_List_col\"><div class=\"form_product_name\">$pname</div>".
         "<div class=\"form_product_img\">{$row['product_img']}</div>".
         "<div  class=\"form_product_tags\">{$row['tags']}</div>".
         "<div  class=\"form_product_status\">{$publish}</div>".
         "<div class=\"form_function\"><a href='edit_product.php?ed_p=$pid'>編輯</a>". //帶product_id到網址中，由edit_product_.php取id來進行編輯
-        "<a href='#' onclick='del_product($pid)'>刪除</a></div>".//帶product__id到del_product()再由del_product_轉址到del_product_.php中
+        //"<a href='del_product.php?product_id=$pid'>刪除</a></div>".//帶product__id到del_product.php，確認後直接刪除
+        //"<a href='#' onclick='del_product($pid,$pname)'>刪除</a></div>". //呼叫js del_product()顯示確認視窗再執行del_product.php
+        "<a href='#' onclick='del_product(\"$pid\",\"$pname\")'>刪除</a></div>". 
         "</div>";
     }
     echo '</div>';
@@ -50,4 +53,6 @@ if(!$result)//若$query無資料，則顯示資料庫讀取失敗
     //---------------
     mysqli_free_result($result);//釋放記憶體
     mysqli_close($link);
+
+
 ?>

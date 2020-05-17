@@ -45,8 +45,7 @@ $is_publish=$row['is_publish'];
     <form id="edit_product_form" action="chkproduct.php?action=edit&ed_p=<?php echo "$product_id"?>" method="post" name="productform" enctype="multipart/form-data">
         <div class="edit_form_col">產品名稱<input name="product_name" type="text" value=<?php echo "$product_name";?>></div>
         <div class="edit_form_col">
-            <input type="hidden" name="MAX_FILE_SIZE" value="20048576">
-            <input type="file" name="product_img" value=<?php  echo "$product_img";?>><br>
+            <input type="file" name="myfile" value=<?php  echo "$product_img";?>><br>
         </div>
         <?php 
         //echo "$is_publish";

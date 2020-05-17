@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta charset="UTF-8" />
 <html>
 <script src="tinymce/tinymce.min.js"></script>
 <script type="text/javascript">
@@ -15,12 +16,11 @@
         selector:'textarea'
         });
 </script>
-<?php include("upload_form.php") ?>
 
     <form action="trail_chk.php?action=add" method="post" name="productform" enctype="multipart/form-data">
         產品名稱<input name="product_name" type="text"></br>
         圖片<input type="file" name="myfile"><br>
-        是否發布<input type="radio" name="publish" vlaue="true">是<input type="radio" name="publish" value="false">否</br>
+        是否發布<input type="radio" name="publish" value="0">是<input type="radio" name="publish" value="1">否</br>
         產品介紹<textarea id="editor1" name="product_content" type="textarea"></textarea>
         <input type="button" value="新增" onclick="check_data()">
     </form>
