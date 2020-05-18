@@ -26,11 +26,11 @@ if ($action=="edit")
     //若是編輯則Update產品資料
     $sql="UPDATE product SET product_name='$product_name', product_img='$product_img', product_content='$product_content', is_publish='$is_publish' WHERE product_id=$product_id";
     $result=execute_sql($link,"mydb",$sql);
-    //echo "<script type='text/javascript'>";
-    echo "已新增資料-$product_name||$product_img||$product_content||$is_publish";
-   // echo "alert('已儲存產品資料-$product_name');";
-    //echo "history.back();";
-   // echo "</script>";
+    echo "<script type='text/javascript'>";
+    echo "alert('已儲存產品資料-$product_name');";
+    echo "history.back();";
+    echo "</script>";
+    
     
 }else{
 
@@ -38,17 +38,17 @@ if ($action=="edit")
     $sql="INSERT INTO product(product_name, product_img, product_content,is_publish,tags) VALUES ('$product_name','$product_img','$product_content','$is_publish','')";
     $result=execute_sql($link,"mydb",$sql);
     echo "<script type='text/javascript'>";
-    echo "alert('已新增資料-$product_name||$product_img||$product_content||$is_publish||fro-$old_path');";
-    //echo "history.back();";
+    echo "alert('已新增資料-$product_name');";
+    echo "history.back();";
     echo "</script>";
 
 }
-
+header("location:product_page.php");//轉址到產品清單頁面
 
 //上傳檔案並回傳結果
 function file_upload(){
     //設定上傳檔案目錄
-    $upload_dir="test_dir/";
+    $upload_dir="upload_img/";
     //upload_file為上傳後檔案路徑；以iconv變更檔名編碼
     $uplaod_file=$upload_dir.iconv("UTF-8","BIG5",$_FILES["myfile"]["name"]);
 
@@ -70,6 +70,7 @@ function file_upload(){
         return $rename_path;
     }else{
         echo "上傳失敗(".$_FILES["myfile"]["error"].")";
+        echo "檔案(".$uplaod_file.")";
     }
 }
 
