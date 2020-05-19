@@ -20,10 +20,11 @@ if(!$query)//若$query無資料，則顯示資料庫讀取失敗
     }
     $row=mysqli_fetch_array($query,MYSQLI_ASSOC); //將SQL取得資料寫入$row中
     // 產生product區塊，並帶入SQL取得的產品資料
+    $product_img_path='manage/'.$row['product_img'];
     echo "<div id='product'>".
     "<h1 id='product_title'>{$row['product_name']}</h1>".
     "<article id='product_content'>{$row['product_content']}</article>".
-    "<div id='product_imgs'><img src=\"{$row['product_img']}\"/></div></div>";
+    "<div id='product_imgs'><img src=\"$product_img_path\"/></div></div>";
 
     mysqli_free_result($query);//釋放記憶體
     mysqli_close($link);//結束連線
