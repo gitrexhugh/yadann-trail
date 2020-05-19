@@ -30,7 +30,7 @@
             產品圖片<input type="file" name="myfile">
         </div>
         <div class="edit_form_col">
-            是否發布<input type="radio" name="publish" value="1">是<input type="radio" name="publish" value="0">否
+            是否發布<input type="radio" name="publish" value="1">是<input type="radio" name="publish" value="0" checked>否
         </div>
             <p>產品介紹</p>
             <textarea id="editor1" name="product_content" type="textarea"></textarea>

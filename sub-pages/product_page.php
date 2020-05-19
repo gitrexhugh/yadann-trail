@@ -1,5 +1,11 @@
 <?php //測試連線到GCP 建立資料庫及資料表
-$PRODUCT_ID=$_GET['pid'];
+if ($_GET['pid']){
+    $PRODUCT_ID=$_GET['pid'];
+}else{
+    $PRODUCT_ID=$_GET['pid'];
+}
+
+global $g_product_name;
 
 //取得資料庫設定與連線function
 require_once("a_config.php");
@@ -21,8 +27,11 @@ if(!$query)//若$query無資料，則顯示資料庫讀取失敗
     $row=mysqli_fetch_array($query,MYSQLI_ASSOC); //將SQL取得資料寫入$row中
     // 產生product區塊，並帶入SQL取得的產品資料
     $product_img_path='manage/'.$row['product_img'];
+    
+    //$GLOBALS['product_name']=$row['product_name'];
+    $g_product_name=$row['product_name'];
     echo "<div id='product'>".
-    "<h1 id='product_title'>{$row['product_name']}</h1>".
+    "<h1 id='product_title'>$g_product_name</h1>".
     "<article id='product_content'>{$row['product_content']}</article>".
     "<div id='product_imgs'><img src=\"$product_img_path\"/></div></div>";
 

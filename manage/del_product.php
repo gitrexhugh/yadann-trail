@@ -34,7 +34,7 @@ function del_product($product_id){
 
 }
     
-//header("location:product_page.php");//轉址到產品清單頁面
+header("location:product_page.php");//轉址到產品清單頁面
 
 ?>
 

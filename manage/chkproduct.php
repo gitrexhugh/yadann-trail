@@ -28,7 +28,7 @@ if ($action=="edit")
     $result=execute_sql($link,"mydb",$sql);
     echo "<script type='text/javascript'>";
     echo "alert('已儲存產品資料-$product_name');";
-    echo "history.back();";
+    //echo "history.back();";
     echo "</script>";
     
     
@@ -39,7 +39,7 @@ if ($action=="edit")
     $result=execute_sql($link,"mydb",$sql);
     echo "<script type='text/javascript'>";
     echo "alert('已新增資料-$product_name');";
-    echo "history.back();";
+    //echo "history.back();";
     echo "</script>";
 
 }
@@ -57,7 +57,7 @@ function file_upload(){
     $file_last_name=explode('.',$file_name);
     $file_type=$file_last_name[1];
 
-    //取得佔存檔的路徑跟檔名
+    //取得暫存檔的路徑跟檔名
     $old_path=$_FILES['myfile']['tmp_name'];
     echo "暫存 $old_path";
 

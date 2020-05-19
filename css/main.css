@@ -118,7 +118,6 @@ menu li a:hover{
 }
 .submenu{
     display: inline-block;
-    width: inherit;
     max-width: 25%;
     margin-top: 20px;
     padding-top: 10px;
@@ -156,13 +155,10 @@ menu li a:hover{
     display: inline-block;
     width: 73%;
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 3%;
     font-family: 'Microsoft JhengHei','Arial','Bahnschrift';
 }
-#product_content{
-    font-size: 18pt;
-    color: #006BAC;
-}
+
 #product_title{
     font-size: 20pt;
     font-weight: 500;
@@ -170,11 +166,11 @@ menu li a:hover{
     margin-top: 5px;
 }
 #product_content{
-    font-size: 14pt;
-    color: #828282;
     margin-top: 20px;
     margin-bottom: 10px;
+    word-wrap:break-word;
 }
+
 #product_imgs{
     margin: 1%;
     max-height: none;
