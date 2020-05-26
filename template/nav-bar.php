@@ -27,7 +27,7 @@
     switch ($case_N)
     {
         case "product.php":
-            $get_name=get_product_name();
+            //$get_name=get_product_name();
             echo "<li><a href=\"product.php\">產品資訊</a></li>";
             echo "<li class=\"current\"><em>$get_name</em></li>";
             break;

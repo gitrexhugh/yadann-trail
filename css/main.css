@@ -252,6 +252,61 @@ li.address{
     list-style-position: inside;
 }
 
+.product_list{
+    display: inline-block;
+    width: 73%;
+}
+
+.list_product_summary{
+    width: 100%;
+    height: 150px;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 3%;
+}
+.list_product_disp{
+    display: inline-block;
+    font-family: 'Microsoft JhengHei','Arial','Bahnschrift';
+    width: 55%;
+    height: 100%;
+    vertical-align: top;
+    margin-left: 2%;
+}
+.list_product_name{
+    font-size: 22pt;
+    color: lightslategray;
+    display: inline-block;
+    width: 100%;
+    line-height: 40px;
+
+}
+.list_product_img{
+    display: inline-block;
+    max-width: 30%;
+}
+.list_product_img img{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+.list_product_content{
+    font-size: 14px;
+    color: lightsteelblue;
+    display: inline-block;
+    width: 90%;
+    margin-top: 5px;
+}
+.list_product_tag{
+    font-size: 12;
+    color: olive;
+    display: inline-block;
+    width: 90%;
+    vertical-align: bottom;
+    margin-bottom: 5px;
+}
+
+
+
 /* 以圖片替換麵包屑中的分隔符號範例
 .cd-breadcrumb.custom-separator li::after, 
 .cd-multi-steps.custom-separator li::after {

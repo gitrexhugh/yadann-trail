@@ -9,7 +9,16 @@
 <div id="main-content">
     <?php include("template/nav-bar.php");?>
     <?php include("template/sub-menu-product.php");?>
-    <?php include("sub-pages/product_page.php");?>
+    <?php
+        $PRODUCT_ID=$_GET['pid'];
+        if ($PRODUCT_ID)
+        {
+            include("sub-pages/product_page.php");
+        }else
+        {
+            include("sub-pages/product_page_index.php");
+        }
+    ?>
     <?php include("template/footer.php");?>
     <?php //include("sub-pages/table_list.php");?>
 </div>
