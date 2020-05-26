@@ -21,7 +21,7 @@
     $page_uri=str_replace($root_path,"",$_SERVER["REQUEST_URI"]);//將網址中的目錄路徑用""來替換掉
     //echo "uri=$page_uri";
     $current_page=explode("?",$page_uri);//用?來分開檔案以及頁面POST參數
-    $case_N=$current_page[0];
+    $case_N=$current_page[0];
     //echo "$case_N";
 
     switch ($case_N)
