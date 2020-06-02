@@ -3,20 +3,7 @@
         <li><a href="index.php">首頁</a></li>
 
 <?php
-/*
-    $crumbs = explode("/",$_SERVER["REQUEST_URI"]);//取得網址並以/為分隔，將各自串存到array $crumbs中
-    foreach($crumbs as $crumb){
-        echo ucfirst(str_replace(array(".php","?"),array(" "," "),$crumb) . ' ');
-        //ucfirst(字串) 將字串中的第一個字改為大寫
-        //str_replace([查詢的字串], [取代的字串], [結果變數]) 
-        //.' ' 將$crumb後加上一個空格
-        $counter=count($crumbs)-1;
-        for($i=0; $i<=$counter;$i++)
-        {
-            echo"$i-$crumbs[$i]";
-        }
-    }
-    */
+
     $root_path="/~hugh/practice/"; //定義要去除的目錄路徑
     $page_uri=str_replace($root_path,"",$_SERVER["REQUEST_URI"]);//將網址中的目錄路徑用""來替換掉
     //echo "uri=$page_uri";

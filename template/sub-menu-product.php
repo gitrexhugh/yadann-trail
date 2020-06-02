@@ -12,7 +12,7 @@
         $link=create_connection();
 
         //查詢產品清單
-        $sql_query="SELECT product_id,product_name FROM product";
+        $sql_query="SELECT product_id,product_name FROM product where is_publish='1'";
         $result= execute_sql($link,"mydb",$sql_query);
 
         if(!$result)//若$query無資料，則顯示資料庫讀取失敗

@@ -1,11 +1,5 @@
 <?php //測試連線到GCP 建立資料庫及資料表
-if ($_GET['pid']){
-    $PRODUCT_ID=$_GET['pid'];
-}else{
-    $PRODUCT_ID=$_GET['pid'];
-}
-
-global $g_product_name;
+$PRODUCT_ID=$_GET['pid'];
 
 //取得資料庫設定與連線function
 require_once("a_config.php");
@@ -17,7 +11,7 @@ mysqli_select_db($link,'mydb');//連線到資料庫mydb
 
 
 //查詢產品ID取得產品名稱、產品內容、產品圖片
-$sql_query="SELECT product_name, product_img, product_content FROM product WHERE PRODUCT_ID=$PRODUCT_ID";
+$sql_query="SELECT product_id, product_name, product_img, product_content,tags FROM product WHERE PRODUCT_ID=$PRODUCT_ID";
 
 $query=mysqli_query($link, $sql_query);//執行SQL查詢資料，查詢後存到$query中
 if(!$query)//若$query無資料，則顯示資料庫讀取失敗
@@ -30,6 +24,8 @@ if(!$query)//若$query無資料，則顯示資料庫讀取失敗
     
     //$GLOBALS['product_name']=$row['product_name'];
     $g_product_name=$row['product_name'];
+
+
     echo "<div id='product'>".
     "<h1 id='product_title'>$g_product_name</h1>".
     "<article id='product_content'>{$row['product_content']}</article>".

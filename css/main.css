@@ -253,16 +253,16 @@ li.address{
 }
 
 .product_list{
-    display: inline-block;
-    width: 73%;
+    display: block;
+    width: 100%;
 }
 
 .list_product_summary{
-    width: 100%;
+    width: 97%;
     height: 150px;
     display: inline-block;
     margin-top: 20px;
-    margin-left: 3%;
+    padding-left: 3%;
 }
 .list_product_disp{
     display: inline-block;

@@ -8,11 +8,11 @@
 <?php include("sub-pages/banner.php");?>
 <div id="main-content">
     <?php include("template/nav-bar.php");?>
-    <?php include("template/sub-menu-product.php");?>
     <?php
         $PRODUCT_ID=$_GET['pid'];
         if ($PRODUCT_ID)
         {
+            include("template/sub-menu-product.php");
             include("sub-pages/product_page.php");
         }else
         {
