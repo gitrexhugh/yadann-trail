@@ -1,12 +1,20 @@
 <?php
-	  
+  
+
+$ini = parse_ini_file('webconfig.ini',true);// 取得資料庫設定
+$db=$ini["database"]["db"];
+$dbhost=$ini["database"]["dbhost"];
+$dbuser=$ini["database"]["dbuser"];
+$dbpass=$ini["database"]["dbpass"];
+    
+
   function create_connection()
   {
     $ini = parse_ini_file('webconfig.ini',true);// 取得資料庫設定
-    $db=$ini["database"]["db_name"];
-    $dbhost=$ini["database"]["db_url"];
-    $dbuser=$ini["database"]["db_user"];
-    $dbpass=$ini["database"]["db_password"];
+    $db=$ini["database"]["db"];
+    $dbhost=$ini["database"]["dbhost"];
+    $dbuser=$ini["database"]["dbuser"];
+    $dbpass=$ini["database"]["dbpass"];
     //連線資料庫
     $link = mysqli_connect($dbhost,$dbuser,$dbpass)
       or die("無法建立資料連接: " . mysqli_connect_error());

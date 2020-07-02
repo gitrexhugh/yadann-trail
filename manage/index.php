@@ -12,7 +12,7 @@
             loginform.submit_btn.click();
             }
         }
-        function check_data()
+        function check_data()// 檢查帳號密碼是否輸入
         {
             
             if (document.loginform.account.value.length==0)

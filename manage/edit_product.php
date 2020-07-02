@@ -1,23 +1,21 @@
 <?php
-//取得要編輯的product_id
-$product_id=$_GET["ed_p"];
+
 //取得資料庫設定與連線function
-require_once("m_config.php");
+require_once("fundation_func.php");
+require_once("product_func.php");
 
-//建立資料庫連線
-$link=create_connection();
+$link = new mysqli($dbhost,$dbuser,$dbpass,$db);
+$q_product_id=entities_fix_string($link,$_GET["ed_p"]);
+$product=get_product_content_wlink($link,$q_product_id);
+$product_id=$product->product_id;
+$product_name=$product->product_name;
+$product_content=$product->product_content;
+$product_img=$product->product_img;
+//echo "ID=$product_id<br>Name=$product_name<br>content=$product_content<br>img=$product_img";
 
-//查詢產品資料
-$sql_query="SELECT product_id,product_name, product_img, tags, product_content, is_publish FROM product WHERE product_id=$product_id";
-$result= execute_sql($link,"mydb",$sql_query);
-$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
-$product_id=$row['product_id'];
-$product_name=$row['product_name'];
-$product_img=$row['product_img'];
-$product_content=$row['product_content'];
-$is_publish=$row['is_publish'];
 
 ?>
+
 <!--html編輯頁面 -->
 <!DOCTYPE html>
 <html>
@@ -78,18 +76,3 @@ $is_publish=$row['is_publish'];
 </div>
 </html>
 
-
- <!--
-        <div class="edit_form_col">
-            <input type="hidden" name="MAX_FILE_SIZE" value="20048576">
-            <input type="file" name="product_img" value=<?php // echo "$product_img";?>><br>
-        </div>
-        <p>產品圖檔</p>
-        <div id="product_imges">
-        <?php //取得產品圖檔
- //               $product_img_pagth="$product_img";
- //               echo "$product_img";
-            ?>
-            <img scr="<?php //echo "$product_img";?>" />
-        </div>
-    -->

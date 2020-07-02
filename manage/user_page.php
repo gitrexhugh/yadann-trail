@@ -4,7 +4,7 @@
         function del_user(uid)
         {
             if (confirm("確認刪除使用者?"))//確認刪除使用者後，刪除產品
-            location.href="del_user.php?user_id="+uid;
+            location.href="del_user.php?du="+uid;
         }
     </script>
 

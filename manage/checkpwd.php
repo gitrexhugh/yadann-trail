@@ -1,41 +1,59 @@
 <?php //檢查登入資料
 
 //取得資料庫設定與連線function
-require_once("m_config.php");
+require_once("fundation_func.php");
+
+$link = new mysqli($dbhost,$dbuser,$dbpass,$db);
+if($link->connect_error) {
+die ('連線資料庫失敗'. "host-$dbhost,user-$user".mysqli_error($link));
+}else
+{
+//  echo 'Connect Sueccess';
 
 //取得index.php輸入的登入資料
-$account=$_POST["account"];
-$password=$_POST["password"];
+//使用entiries_fix_string來去除_POST取得的不合法字串
+$account=entities_fix_string($link,$_POST["account"]);
+$password=entities_fix_string($link,$_POST["password"]);
+//$sql_query="SELECT account FROM users Where account='$account' AND password='$password'";
+//查詢帳號是否存在，回傳帳號資料
+$sql_query="SELECT * FROM hash_user Where u_ac='$account'";
+$result=$link->query($sql_query);
+$row=$result->fetch_array(MYSQLI_ASSOC);
+//$account=$row[account];
+$account=$row[u_ac];
+//echo "查詢帳號為：$account";
 
-//連線資料庫
-$link=create_connection();
+if(!$account) 
+    {   
+        //帳號不存在，則顯示錯誤訊息紀錄Cookie為False，跳出視窗顯示帳號或密碼錯誤
+        setcookie("passed","FALSE");
+        echo "<script type='text/javascript'>";
+        echo "alert('帳號或密碼錯誤');";
+        echo "history.back();";
+        echo "</script>";
+    }
+    else{//若帳號存在，則比對密碼是否正確
+        if (password_verify($password,$row[user_password])){
+            
+            //密碼比對正確時紀錄Cookie 帳號以及True，轉到管理首頁
+            setcookie("account",$account);
+            setcookie("passed","TRUE");
+            header("location:manage.php");
+        }else{
+            // 密碼比對錯誤，則顯示錯誤訊息紀錄Cookie為False，跳出視窗顯示帳號或密碼錯誤
+            setcookie("passed","FALSE");
+            echo "<script type='text/javascript'>";
+            echo "alert('帳號或密碼錯誤');";
+            echo "history.back();";
+            echo "</script>";
+        }
 
-//查詢使用者資料表中，帳號、密碼與輸入資料相同的資料
-$sql_query="SELECT*FROM users Where account='$account' AND password='$password'";
-//執行查詢後將結果存入$result
-$result= execute_sql($link,"mydb",$sql_query);
 
-if(mysqli_num_rows($result)==0)// mysqli_num_rows取得SQL結果的資料數
-{
-    mysqli_free_result($result);
-    mysqli_close($link);
-    setcookie("passed","FALSE");
-    echo "<script type='text/javascript'>";
-    echo "alert('帳號或密碼錯誤');";
-    echo "history.back();";
-    echo "</script>";
+    }
+
 
 }
-else//否則將資料寫入 cookie，導向user_page
-{
-    $id_data=mysqli_fetch_object($result);//將SQL執行結果存為物件形式，以table欄位為index取得物件內容
-    $account=$id_data->account;//取得user_id欄位
-    mysqli_free_result($result);
-    mysqli_close($link);
 
-    setcookie("account",$account);
-    setcookie("passed","TRUE");
-    header("location:manage.php");
 
-}
+
 ?>

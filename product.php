@@ -14,9 +14,12 @@
         {
             include("template/sub-menu-product.php");
             include("sub-pages/product_page.php");
+            //echo "product_page";
         }else
         {
             include("sub-pages/product_page_index.php");
+            //include("trail_product2.php");
+            
         }
     ?>
     <?php include("template/footer.php");?>
