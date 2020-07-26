@@ -11,6 +11,7 @@ $product_id=$product->product_id;
 $product_name=$product->product_name;
 $product_content=$product->product_content;
 $product_img=$product->product_img;
+$is_publish=$product->product_pub;
 //echo "ID=$product_id<br>Name=$product_name<br>content=$product_content<br>img=$product_img";
 
 
@@ -52,24 +53,40 @@ $product_img=$product->product_img;
     <a href="product_page.php">返回</a>
     <form id="edit_product_form" action="chkproduct.php?action=edit&ed_p=<?php echo "$product_id"?>" method="post" name="productform" enctype="multipart/form-data">
         <div class="edit_form_col">產品名稱<input name="product_name" type="text" value=<?php echo "$product_name";?>></div>
+        <div class="edit_form_img">
+            圖檔：<?php
+                    echo <<<_EDN
+                        $product_img
+                        <img src= $product_img>
+                        <a href='#' onclick='del_img("$product_img")'>刪除</a>
+                    _EDN;     
+/*
+                echo <<<_EDN
+                    $product_img<br>
+                    <img src= $product_img>
+                _EDN;
+*/
+            ?>
+
+        </div>
         <div class="edit_form_col">
-            <input type="file" name="myfile" value=<?php  echo "$product_img";?>><br>
+            <input type="file" multiple="multiple" name="myfile"><br>
         </div>
         <?php 
         //echo "$is_publish";
             if($is_publish)//檢查是否發布 is_publish的值來顯示radio button
                 {
                     $publish="是";
-                    echo "<div class=\"edit_form_col\">是否發布".
+                    echo "<div class=\"edit_form_col_radio\">是否發布".
                         "<input type=\"radio\" name=\"publish\" value=\"1\" checked>是</input><input type=\"radio\" name=\"publish\" value=\"0\">否</input></div>";
                 }else{
                     $publish="否";
-                    echo "<div class=\"edit_form_col\">是否發布".
+                    echo "<div class=\"edit_form_col_radio\">是否發布".
                         "<input type=\"radio\" name=\"publish\" value=\"1\" >是</input><input type=\"radio\" name=\"publish\" value=\"0\" checked>否</input></div>";
                 }
          ?>  
         <p>產品介紹</p>
-        <textarea id="editor1" name="product_content" type="textarea"><?php echo "$product_content";?></textarea>
+        <textarea id="editor1" name="product_content" type="textarea" style="height: 500px;"><?php echo "$product_content";?></textarea>
         <input class="form_submit" type="button" value="修改" onclick="check_data()"></input>
     </form>
 </section>

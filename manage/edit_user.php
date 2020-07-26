@@ -1,26 +1,19 @@
 <?php
-//取得要編輯的user_id
-$user_id=$_GET["ed_u"];
-//取得資料庫設定與連線function
-//require_once("m_config.php");
-require_once("fundation_func.php");
 
-//建立資料庫連線
-//$link=create_connection();
-$link = new mysqli($dbhost,$dbuser,$dbpass,$db);
-if($link->connect_error) {
-die ('連線資料庫失敗'. "host-$dbhost,user-$user".mysqli_error($link));
-}else{
-    //查詢使用者清單
-    $sql_query="SELECT u_ac, user_email,user_password FROM hash_user WHERE user_id=$user_id";
-    $result=$link->query($sql_query);
-//    $result= execute_sql($link,"mydb",$sql_query);
-    $row=$result->fetch_array(MSQLI_ASSOC);
-//    $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
-    $user_account=$row[u_ac];
-    $user_password=$row[user_password];
-    $user_email=$row[user_email];
-}
+//取得資料庫設定與連線function
+require_once("fundation_func.php");
+require_once("user_func.php");
+
+//取得要編輯的user_id
+$usid=$_GET["edu"];
+
+$uinfo=get_user_info_wlink($link,$usid);
+$usid=$uinfo->usid;
+$uacnt=$uinfo->uacnt;
+$upswd=$uinfo->upswd;
+$umail=$uinfo->umail;
+$ulgtime=$uinfo->ulgtime;
+$ustat=$uinfo->ustat;
 
 ?>
 
@@ -48,10 +41,23 @@ die ('連線資料庫失敗'. "host-$dbhost,user-$user".mysqli_error($link));
 <section class="form_formate">
     <title>編輯使用者</title>
     <a href="user_page.php">返回</a>
-    <form id="edit_user_form" action="chkuser.php?action=edit&ed_u=<?php echo "$user_id"?>" method="post" name="userform">
-        <div class="edit_form_col">帳號<input name="account" type="text" value=<?php echo "$user_account";?>></div>
-        <div class="edit_form_col">密碼<input name="password" type="password" value=<?php echo "$user_password";?>></div>
-        <div class="edit_form_col">email<input name="email" type="email" value=<?php echo "$user_email";?>></div>        
+    <form id="edit_user_form" action="chkuser.php?edu=<?php echo "$usid"?>" method="post" name="userform">
+        <div class="edit_form_col">帳號<input name="account" type="text" value=<?php echo "$uacnt";?>></div>
+        <div class="edit_form_col">密碼<input name="password" type="password" value=<?php echo "$upswd";?>></div>
+        <div class="edit_form_col">email<input name="email" type="email" value=<?php echo "$umail";?>></div>  
+        <?php 
+        //echo "$is_publish";
+            if($ustat)//檢查是否發布 is_publish的值來顯示radio button
+                {
+                    //$ustat="是";
+                    echo "<div class=\"edit_form_col\">是否啟用".
+                        "<input type=\"radio\" name=\"ustat\" value=\"1\" checked>是</input><input type=\"radio\" name=\"ustat\" value=\"0\">否</input></div>";
+                }else{
+                    //$ustat="否";
+                    echo "<div class=\"edit_form_col\">是否啟用".
+                        "<input type=\"radio\" name=\"ustat\" value=\"1\" >是</input><input type=\"radio\" name=\"ustat\" value=\"0\" checked>否</input></div>";
+                }
+         ?>        
     </form>
     <input class="form_submit" type="button" value="修改" onclick="check_data()">
 </section>

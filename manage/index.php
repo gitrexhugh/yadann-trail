@@ -1,5 +1,8 @@
 <html>
 <head>
+        <meta name="robots" content="noindex">
+        <meta name="googlebot" content="noindex">
+
     <meta charset="utf-8">
     <title>管理系統</title>
     <script type="text/javascript">

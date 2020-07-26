@@ -4,8 +4,8 @@
     <menu>
             <li><a href="#">整合產品銷售</a></li>
             <li><a href="product_page.php">產品資訊</a></li>
-            <li><a href="#">聯絡我們</a></li>
-            <li><a href="#">關於曄電</a></li>
+            <li><a href="contacts.php">聯絡我們</a></li>
+            <li><a href="edit_about_us.php">關於曄電</a></li>
             <li><a href="user_page.php">使用者設定</a></li>
     </menu>
 </div>

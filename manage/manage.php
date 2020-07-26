@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
 </head>
 <?php include("manage_header.php");?>
     <?php include("manage_menu.php");?>

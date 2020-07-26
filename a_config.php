@@ -1,6 +1,10 @@
 <?php
+    require_once("manage/fundation_func.php");
+    
+    //$link = new mysqli($dbhost,$dbuser,$dbpass,$db);
 
     //連線資料庫Function
+    /*
     function create_connection()
     {
       $ini = parse_ini_file('manage/webconfig.ini',true);// 取得資料庫設定
@@ -12,16 +16,6 @@
       //連線資料庫2
       $con=new mysqli($dbhost, $dbuser, $dbpass, $db);
       if ($con->connect_error) die("無法建立資料連接: " . mysqli_connect_error());      
-      
-      /*
-      //連線資料庫1
-      $link = mysqli_connect($dbhost,$dbuser,$dbpass)
-        or die("無法建立資料連接: " . mysqli_connect_error());
-        
-      mysqli_query($link, "SET NAMES utf8");
-                     
-      return $link;
-      */
       return $con;
     }
 
@@ -35,5 +29,5 @@
           
       return $result;
     }
-
+*/
 ?>

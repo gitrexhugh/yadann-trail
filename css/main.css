@@ -292,9 +292,13 @@ li.address{
 .list_product_content{
     font-size: 14px;
     color: lightsteelblue;
-    display: inline-block;
+    display: -webkit-box;
     width: 90%;
     margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 .list_product_tag{
     font-size: 12;
@@ -303,6 +307,95 @@ li.address{
     width: 90%;
     vertical-align: bottom;
     margin-bottom: 5px;
+}
+
+#contact_us{
+    display: block;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+
+#contact_title{
+    font-size: 20pt;
+    font-weight: 500;
+    color: #006BAC;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#contact_disc{
+    height: auto;
+    font-size: 14pt;
+    line-height: 30px;
+    color: #022758;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+
+#contact_form{
+    display: block;
+    width: 80%;
+    align-content: center;
+    margin: auto;
+}
+
+.contact_form_col{
+    display: block;
+    height: auto;
+    font-size: 20pt;
+    line-height: 30px;
+    color: #505050;
+    margin-bottom: 2%;
+    
+}
+.col_title{
+    height: auto;
+    font-size: 14pt;
+    line-height: 30px;
+    color: #505050;
+    
+}
+
+.contact_input{
+    font-size: 14pt;
+    line-height: 30px;
+    width: 100%;
+    color: cornflowerblue;
+}
+#request_info{
+    font-size: 14pt;
+    line-height: 30px;
+    color: cornflowerblue;
+    width: 100%;
+    min-height: 250px;
+}
+
+.contact_submit{
+    font-size: 16pt;
+    display: block;
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+    background-color: rosybrown;
+    color:white;
+    border-radius: 4px;
+    border:0;
+    text-align: center;
+    margin: auto;
+}
+
+.contact_submit:hover{
+    display: block;
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(97, 59, 59);
+    color:white;
+    border-radius: 4px;
+    border:0;
 }
 
 

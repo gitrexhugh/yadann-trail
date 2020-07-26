@@ -1,8 +1,28 @@
 <!--檢查登入資訊，並顯示登入帳號  -->
 <html lang="zh-TW">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" type="text/css" href="manage.css">
+
+    <script type="text/javascript">
+        //刪除產品的Javascript
+        function del_product(pid,pname)//確認刪除產品後，刪除產品
+        {
+            if (confirm("確認刪除產品"+pname+"?"))
+            location.href="del_product.php?product_id="+pid;
+        }
+
+        //刪除產品的JS
+        function del_img(img)//確認刪除圖片後，刪除圖片
+        {
+            if (confirm("確認刪除照片?"))
+            location.href="del_product_img.php?img="+img;
+        }
+
+    </script>
+    
 </head>
 
 <div id="header">

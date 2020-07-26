@@ -29,11 +29,11 @@
         <div class="edit_form_col">
             產品圖片<input type="file" name="myfile">
         </div>
-        <div class="edit_form_col">
+        <div class="edit_form_col_radio">
             是否發布<input type="radio" name="publish" value="1">是<input type="radio" name="publish" value="0" checked>否
         </div>
             <p>產品介紹</p>
-            <textarea id="editor1" name="product_content" type="textarea"></textarea>
+            <textarea id="editor1" name="product_content" type="textarea" style="height: 500px;"></textarea>
             <input class="form_submit" type="button" value="新增" onclick="check_data()"></input>
         </form>
        

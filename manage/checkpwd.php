@@ -16,11 +16,11 @@ $account=entities_fix_string($link,$_POST["account"]);
 $password=entities_fix_string($link,$_POST["password"]);
 //$sql_query="SELECT account FROM users Where account='$account' AND password='$password'";
 //查詢帳號是否存在，回傳帳號資料
-$sql_query="SELECT * FROM hash_user Where u_ac='$account'";
+$sql_query="SELECT * FROM hash_user Where uacnt='$account'";
 $result=$link->query($sql_query);
 $row=$result->fetch_array(MYSQLI_ASSOC);
 //$account=$row[account];
-$account=$row[u_ac];
+$account=$row['uacnt'];
 //echo "查詢帳號為：$account";
 
 if(!$account) 
@@ -33,7 +33,7 @@ if(!$account)
         echo "</script>";
     }
     else{//若帳號存在，則比對密碼是否正確
-        if (password_verify($password,$row[user_password])){
+        if (password_verify($password,$row['upswd'])){
             
             //密碼比對正確時紀錄Cookie 帳號以及True，轉到管理首頁
             setcookie("account",$account);
