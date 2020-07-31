@@ -4,6 +4,7 @@ $upload_dir="upload_img/";
 //upload_file為上傳後檔案路徑；以iconv變更檔名編碼
 $uplaod_file=$upload_dir.iconv("UTF-8","BIG5",$_FILES["myfile"]["name"]);
 
+
 //取得上傳檔案附檔名
 $file_name=$_FILES["myfile"]["name"];
 $file_last_name=explode('.',$file_name);

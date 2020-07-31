@@ -5,6 +5,7 @@ class product_object
 }
 
 //未實作
+/*
 function update_product_content($product_id){
     $db=db_info();
     $pid=$product_id;
@@ -16,7 +17,7 @@ function update_product_content($product_id){
         $p_obj=new product_object;
         return $p_obj;
     }
-}
+}*/
 
 //帶入ID、DB Link取得產品產品內容的Function
 function get_product_content_wlink($link,$product_id){

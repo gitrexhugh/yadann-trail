@@ -17,7 +17,13 @@ die ('連線資料庫失敗'. "host-$dbhost,user-$user".mysqli_error($link));
     //$tmp_product_content= $_POST["product_content"];
     //$product_content=entities_fix_string($link,$tmp_product_content);
     $product_content=entities_fix_string($link,$_POST["product_content"]);
-    $is_publish=entities_fix_string($link,$_POST["publish"]);
+    $publish_tmp=$_POST["publish"];
+    if (!$publish_tmp){
+        $is_publish=0;//若publish參數是空值，則is_publish=0
+    }else{
+        $is_publish=1;//若publish參數有值，則is_publish=1
+    }
+    
 
     if ($action=="edit")
     {
@@ -27,8 +33,8 @@ die ('連線資料庫失敗'. "host-$dbhost,user-$user".mysqli_error($link));
         //echo "content:$product_content";
         //echo "更新:$product_id<br>name:$product_name<br>$product_content";
         echo "<script type='text/javascript'>";
-        echo "alert('已儲存產品資料-$product_name');";
-        echo "history.back();";
+        echo "alert('已儲存產品資料-$is_publish');";
+        //echo "history.back();";
         echo "</script>";
         
         
@@ -43,7 +49,7 @@ die ('連線資料庫失敗'. "host-$dbhost,user-$user".mysqli_error($link));
         echo "</script>";
     
     }
-    header("location:product_page.php");//轉址到產品清單頁面
+    //header("location:product_page.php");//轉址到產品清單頁面
     $link->close();
 }
 
@@ -67,7 +73,7 @@ function file_upload(){
 
         //取得暫存檔的路徑跟檔名
         $old_path=$_FILES['myfile']['tmp_name'];
-        echo "暫存 $old_path";
+        //echo "暫存 $old_path";
 
         if(move_uploaded_file($old_path,$uplaod_file))// 將佔存檔案移動到指定的路徑
         {
